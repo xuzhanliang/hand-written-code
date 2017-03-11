@@ -3,11 +3,11 @@ package 刷题遇到的算法题;
 public class SiDengFen {
 
 	public static void main(String[] args) {
-		int[] a = new int[]{2,5,1,1,1,1,4,1,7,3,7};
-		int[] b = new int[]{10,2,11,13,1,1,1,1,1};
-		int[] c= new int[]{1,1,1,1};
-		System.out.println(resolve(a));
-		System.out.println(resolve(b));
+		//int[] a = new int[]{2,5,1,1,1,1,4,1,7,3,7};
+		//int[] b = new int[]{10,2,11,13,1,1,1,1,1};
+		int[] c= new int[]{1,1,1,1,1,1,1,1,1};
+		//System.out.println(resolve(a));
+		//System.out.println(resolve(b));
 		System.out.println(resolve(c));
 	}
 	public static boolean resolve(int[] a){
