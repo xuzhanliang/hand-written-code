@@ -1,5 +1,10 @@
 package sequence;
 
+/**
+ * 最长公共子序列
+ * @author xyuser
+ *
+ */
 public class LCS {
     public int findLCS(String A, int n, String B, int m) {
         // write code here
