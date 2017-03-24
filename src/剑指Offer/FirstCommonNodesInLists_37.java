@@ -2,13 +2,7 @@ package ½£Ö¸Offer;
 
 import java.util.Stack;
 
-class ListNode {
-    int val;
-    ListNode next = null;
 
-    ListNode(int val) {
-        this.val = val;
-    }
 public class FirstCommonNodesInLists_37 {
 	
 	    public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
@@ -30,4 +24,4 @@ public class FirstCommonNodesInLists_37 {
 	 
 	    }
 	}
-}
+
