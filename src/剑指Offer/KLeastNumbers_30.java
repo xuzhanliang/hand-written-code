@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+import sort.QuickSort;
+
 public class KLeastNumbers_30 {
 	public static void main(String[] args) {
 		int[] a= new int[]{4,5,1,6,2,7,3,8,9,5,6,4,1,56,45,64,65,0,2,1};
@@ -43,4 +45,6 @@ public class KLeastNumbers_30 {
 				return o2-o1;
 			}
 		};
+		
+		
 	}
