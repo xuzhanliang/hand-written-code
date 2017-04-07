@@ -6,7 +6,8 @@ public class test {
 		//BubbleSort.bubbleSort(a);
 		//SelectSort.selectSort(a);
 		//InsertSort.insertSort(a);
-		QuickSort.quickSort(a);
+		//QuickSort.quickSort(a);
+		HeapSort.HeapSort(a, a.length);
 		for(int i=0;i<a.length;i++){
 			System.out.print(a[i]+" ");
 		}
