@@ -15,8 +15,14 @@ public class PrintBinaryTreeByLevel {
 		Node b = new Node(2, d, null);
 		Node c = new Node(3, e, f);
 		Node a = new Node(1, b, c);
-		printByLevel(a);
+		//printByLevel(a);
+		printByZ(a);
 	}
+	/*
+	 * 二叉树的按层打印
+	 * 思路：last和nLast两个节点
+	 * nLast表示下一行的最后节点
+	 */
 	public static void printByLevel(Node head){
 		if(head == null){
 			return ;
@@ -45,6 +51,16 @@ public class PrintBinaryTreeByLevel {
 		}
 		System.out.println();
 	}
+	/*
+	 * 二叉树之型打印-双端列表
+	 * 原则1：从左到右的过程，从dq的头弹出节点，
+	 * 如果弹出的节点没有孩子节点，-。
+	 * 如果弹出的节点有孩子节点，先让左孩子从尾进入dq，再让右孩子从尾部进入dq。
+	 * 
+	 * 原则2：从右到左的过程，从dq的尾部弹出节点，
+	 * 如果弹出节点没有孩子节点，-。
+	 * 如果弹出的节点有孩子节点，先让右孩子从头进去dq，再让左孩子从头进去dq
+	 */
 	public static void printByZ(Node head){
 		if(head == null){
 			return ;
@@ -56,10 +72,43 @@ public class PrintBinaryTreeByLevel {
 		Node nLast = null;
 		dq.offerFirst(head);
 		printLevelAndOrientation(level++,lr);
+		while(!dq.isEmpty()){
+			if(lr){//原则1
+				head = dq.pollFirst();
+				if(head.left!=null){
+					nLast = nLast == null ? head.left : nLast;
+					dq.offerLast(head.left);
+				}
+				if(head.right!=null){
+					nLast = nLast == null ? head.right : nLast;
+					dq.offerLast(head.right);
+				}
+				
+			}else{//原则2
+				head = dq.pollLast();
+				if(head.right!=null){
+					nLast = nLast == null ? head.right : nLast;
+					dq.offerFirst(head.right);
+				}
+				if(head.left!=null){
+					nLast = nLast == null ? head.left : nLast;
+					dq.offerFirst(head.left);
+				}
+			}
+			System.out.print(head.value + " ");
+			if(head==last && !dq.isEmpty()){
+				lr = !lr;
+				last = nLast;
+				nLast = null;
+				System.out.println();
+				printLevelAndOrientation(level++,lr);
+			}
+		}
+		System.out.println();
 	}
 	private static void printLevelAndOrientation(int i, boolean lr) {
 		System.out.print("Level " + i + " from ");
-		System.out.print(lr ? "left to right" : "right to left");
+		System.out.print(lr ? "left to right : " : "right to left : ");
 		
 	}
 }

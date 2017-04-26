@@ -33,17 +33,20 @@ public class Main {
 			int count = 0;
 			for(int i=0;i<=a;i++){
 				for(int j=0;j<=b;j++){
-					for(int k=0;k<=c;k++){
-						int res = i*5+j*8+k*10;
-						if(res>n){
-							continue;
-						}else if(res==n){
-							count++;
-							continue;
-						}else{
-							continue;
-						}
+					if((n-5*i-8*j)%10==0 && n-5*i-8*j>=0 && n-5*i-8*j<=c*10){
+						count++;
 					}
+//					for(int k=0;k<=c;k++){
+//						int res = i*5+j*8+k*10;
+//						if(res>n){
+//							continue;
+//						}else if(res==n){
+//							count++;
+//							continue;
+//						}else{
+//							continue;
+//						}
+//					}
 				}
 			}
 			System.out.println(count);
